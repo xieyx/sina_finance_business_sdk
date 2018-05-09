@@ -1,0 +1,16 @@
+{
+    "name": "yanxin1/sina_finance_sdk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "yanxin1",
+            "email": "yanxin1@staff.sina.com.cn"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "JROpen": "src/"
+        }
+    }
+}
