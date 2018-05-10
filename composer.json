@@ -1,5 +1,7 @@
 {
     "name": "yanxin1/sina_finance_sdk",
+    "description": "open api",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
@@ -7,7 +9,10 @@
             "email": "yanxin1@staff.sina.com.cn"
         }
     ],
-    "require": {},
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+    },
     "autoload": {
         "psr-4": {
             "JROpen\\": "src/"
