@@ -3,13 +3,14 @@
 namespace JROpen\Tests;
 
 use JROpen\Service\Rsa;
+use \PHPUnit\Framework\TestCase;
 
 /**
  * RsaTest
  * Rsa sdk api测试类
  *
  */
-class RsaTest extends \PHPUnit_Framework_TestCase
+class RsaTest extends TestCase
 {
     public function testDescypt()
     {

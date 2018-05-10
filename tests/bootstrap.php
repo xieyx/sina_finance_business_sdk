@@ -1,7 +1,5 @@
 <?php
 
-define('TEST_ROOT', __DIR__);
+error_reporting(E_ALL);
 
-$_SERVER['HTTP_HOST'] = 'localhost';
-
-include __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
