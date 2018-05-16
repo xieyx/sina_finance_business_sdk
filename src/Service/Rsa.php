@@ -1,9 +1,24 @@
 <?php
+/**
+ * Rsa
+ * Rsa加密/解密
+ *
+ * @link https://github.com/xieyx/sina_finance_business_sdk
+ * @author shelf <xieyanxin93@gmail.com>
+ */
 
 namespace JROpen\Service;
 
 class Rsa
 {
+    /**
+     * 解密
+     *
+     * @param string $string
+     * @param string $pri_key
+     * @param int $padding
+     * @return array
+     */
     public static function decrypt($string, $pri_key, $padding = OPENSSL_PKCS1_PADDING)
     {
         $crypto = '';
@@ -15,6 +30,14 @@ class Rsa
         return json_decode($crypto, true);
     }
 
+    /**
+     * 加密
+     *
+     * @param array $data
+     * @param string $pub_key
+     * @param int $padding
+     * @return string
+     */
     public static function encrypt($data, $pub_key, $padding = OPENSSL_PKCS1_PADDING)
     {
         $crypto = '';

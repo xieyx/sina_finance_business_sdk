@@ -11,7 +11,7 @@ composer require yanxin1/sina_finance_sdk
 ```php
 use JROpen\Service\Rsa;
 
-Rsa::descypt($jr_signed_params, $pri_key);
+Rsa::decrypt($sign, $privateKey);
 ```
 
 ## License
