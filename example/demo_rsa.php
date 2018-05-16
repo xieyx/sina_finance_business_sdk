@@ -2,8 +2,8 @@
 require 'vendor/autoload.php';
 
 use JROpen\Service\Rsa;
-$sign = 'mXW/F3AjtoTTAfTxLutyW/8tx0ZuvpAN4d81HU29iovroG476gWNUc53rMNh7UVkARKNPH0xsBof9um7Jb0OIUscsb1HFGk0ggnB3WkRiHHQy9FsqEWEswAEkeWto7EU77rZ7Mj7iv2oeaNowkyfhETbgsfQH7y+wyVJWpNcHcU=';
-$pri_key = '-----BEGIN PRIVATE KEY-----
+
+$privateKey = '-----BEGIN PRIVATE KEY-----
 MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAKc47ROV1CKwSRN9
 /M2gOE12piDrefHdWlJB4/D7b4dbHk353m1YqNBq2SQqIRo8UC+8z05RDSDX52cW
 HGtlkB5eOKs5yld/9Z3AV/IrMECwjNQG8im7EWcXydnSfBRudRvYm272ciKMQ9FD
@@ -20,4 +20,19 @@ kak+HiV2XVnVJrm0ovjTl6EXTCX9Yyl8wcQlpxMhfKY8gT7MWk1md8Nl6ph8+FL6
 3oA2UY2LN+Oy
 -----END PRIVATE KEY-----';
 
-echo Rsa::descypt($sign, $pri_key);
+$publicKey = '-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnOO0TldQisEkTffzNoDhNdqYg
+63nx3VpSQePw+2+HWx5N+d5tWKjQatkkKiEaPFAvvM9OUQ0g1+dnFhxrZZAeXjir
+OcpXf/WdwFfyKzBAsIzUBvIpuxFnF8nZ0nwUbnUb2Jtu9nIijEPRQ8hMqNzt9Ebi
+b98tA6kQPDINfS9qSQIDAQAB
+-----END PUBLIC KEY-----';
+
+$data = [
+    'timestamp' => time(),
+    'uid' => 1,
+    'channel' => 'WEIBO',
+];
+
+$sign = Rsa::encrypt($data, $publicKey);
+echo $sign.PHP_EOL;
+var_dump(Rsa::decrypt($sign, $privateKey));
