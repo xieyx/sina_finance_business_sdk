@@ -13,6 +13,12 @@ use JROpen\Service\Rsa;
 
 Rsa::decrypt($sign, $privateKey);
 ```
+JAVA、PHP、NODE AES 互通, 其他语言代码放置于language目录
+```php
+use JROpen\Service\Aes;
+
+Aes::encrypt($str, $key);
+```
 
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fxieyx%2Fsina_finance_business_sdk.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fxieyx%2Fsina_finance_business_sdk?ref=badge_large)
